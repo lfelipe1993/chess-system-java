@@ -17,10 +17,10 @@ public class Program {
 		ChessMatch chessMatch = new ChessMatch();
 		List<ChessPiece> captured = new ArrayList<>();
 
-		while (true) {
+		while (!chessMatch.getCheckMate()) {
 			try {
 				UI.clearScreen();
-				UI.PrintMatch(chessMatch, captured);
+				UI.printMatch(chessMatch, captured);
 				//UI.printBoard(chessMatch.getPieces());
 				System.out.println();
 				System.out.print("Source: ");
@@ -50,6 +50,9 @@ public class Program {
 			} 
 
 		}
+		
+		UI.clearScreen();
+		UI.printMatch(chessMatch, captured);
 
 	}
 
